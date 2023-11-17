@@ -21,12 +21,17 @@ const num = 33;
 let findPrime = false;
 
 let currentNum = num;
-while(findPrime==false) {
-    if(currentNum === 2 || currentNum === 3 || (currentNum-1)%6 == 0 || (currentNum-1)%6 == 0 ) {
-        console.log(`${currentNum}`);
-        findPrime = true;
-    }
-    currentNum++;
+while (findPrime == false) {
+  if (
+    currentNum === 2 ||
+    currentNum === 3 ||
+    (currentNum - 1) % 6 == 0 ||
+    (currentNum + 1) % 6 == 0
+  ) {
+    console.log(`${currentNum}`);
+    findPrime = true;
+  }
+  currentNum++;
 }
 
 // part 3
@@ -36,17 +41,17 @@ let str =
 let removeNewLine = str.split("\n");
 
 let index = 0;
-while(index < removeNewLine.length) {
-    let row =removeNewLine[index].split(",");
-    let j = 0;
+while (index < removeNewLine.length) {
+  let row = removeNewLine[index].split(",");
+  let j = 0;
 
-    let rowString = "";
-    while(j < row.length-1){
-        rowString+= `${row[j]}, `;
-        j++;
-    }
-    rowString+=row[j];
+  let rowString = "";
+  while (j < row.length - 1) {
+    rowString += `${row[j]}, `;
+    j++;
+  }
+  rowString += row[j];
 
-    console.log(rowString);
-    index++;
+  console.log(rowString);
+  index++;
 }
